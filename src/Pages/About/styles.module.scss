@@ -11,7 +11,7 @@
     z-index: -1;
 }
 
-.hero-left{
+.hero-left {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,14 +20,14 @@
     gap: 41px;
 }
 
-.hero-right{
+.hero-right {
     flex: 1;
     display: flex;
     align-items: center;
     height: 100%;
 }
 
-.hero-right img{
+.hero-right img {
     height: 100%;
     width: auto;
     object-fit: contain;
@@ -43,18 +43,18 @@
 }
 
 .hero-gradient1 {
-  background: linear-gradient(90deg, rgba(78, 144, 150, 1) 29.81%, rgba(173, 229, 185, 1) 66.83%, rgba(245, 224, 193, 1) 82.21%, rgba(238, 172, 156, 1) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  display: inline-block;
-  -webkit-text-fill-color: transparent;
-  background-size: 100%;
-  background-repeat: repeat;
+    background: linear-gradient(90deg, rgba(78, 144, 150, 1) 29.81%, rgba(173, 229, 185, 1) 66.83%, rgba(245, 224, 193, 1) 82.21%, rgba(238, 172, 156, 1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-block;
+    -webkit-text-fill-color: transparent;
+    background-size: 100%;
+    background-repeat: repeat;
 }
 
 hr {
-    margin: 0 ;
+    margin: 0;
     background-color: black;
     border-color: black;
     height: 1px;
@@ -63,30 +63,30 @@ hr {
 
 .sect-two-wrapper {
     display: flex;
-    width: calc( 100% - (78px + 78px));
+    width: calc(100% - (78px + 78px));
     padding: 78px;
 }
 
-.two-right{
+.two-right {
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex: 1;
 }
 
-.two-left{
+.two-left {
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 1;
 }
 
-.two-right h2{
+.two-right h2 {
     margin: 0;
     text-align: left;
 }
 
-.two-right p{
+.two-right p {
     color: black !important;
     width: 550px;
 }
@@ -106,7 +106,7 @@ hr {
     display: flex;
 }
 
-.top-left{
+.top-left {
     display: flex;
     flex-direction: column;
     gap: 31px;
@@ -196,4 +196,141 @@ hr {
     background-color: white;
     border-radius: 50px;
     padding: calc(47px - 32px);
+}
+
+.sect-four-wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 45px 121px;
+    gap: 104px;
+}
+
+.four-top {
+    display: flex;
+}
+
+.four-top img {
+    width: 473px;
+    height: 343px;
+}
+
+.four-top-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.four-top p {
+    color: black !important;
+}
+
+.four-bottom {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 103px;
+}
+
+.four-bottom-left {
+    flex: 1;
+}
+
+.four-bottom-left img {
+    display: block;
+    margin: 0 auto;
+}
+
+.four-bottom-left p {
+    color: black !important;
+}
+
+.four-bottom-right {
+    flex: 1;
+}
+
+.four-bottom-right img {
+    display: block;
+    margin: 0 auto;
+}
+
+.four-bottom-right p {
+    color: black !important;
+}
+
+.sect-five-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 84px 220.5px;
+    gap: 24px;
+}
+
+.sect-five-wrapper h2 {
+    color: black !important;
+    margin: 0;
+}
+
+.sect-five-wrapper p {
+    color: black !important;
+    margin: 0;
+}
+
+.sect-five-member {
+    display: flex;
+    align-items: center;
+    gap: 129px;
+}
+
+.sect-five-member-details {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.sect-five-member-details h2 {
+    text-align: left !important;
+    margin: 0 !important;
+}
+
+.sect-five-member-details h3 {
+    text-align: left !important;
+    margin: 0 !important;
+}
+
+.sect-six-wrapper {
+    display: flex;
+    flex-direction: column;
+    background: url('../../assets/gradient-bg.png') no-repeat center center;
+    background-size: cover;
+    padding: 120px 331px;
+    align-items: center;
+    gap: 24px;
+}
+
+.sect-six-wrapper h2{
+    white-space: nowrap;
+    color: white !important;
+    margin: 0;
+}
+.sect-six-wrapper p{
+    color: white !important;
+    margin: 0;
+}
+
+.sect-six-wrapper .abt-btn-wrapper{
+    margin-top: 0 !important;
+    background: rgba(0, 0, 0, 0.2);
+    padding: .4rem;
+    border-radius: 4.78px;
+}
+
+.sect-six-wrapper .abt-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black !important;
+    width: 220px;
+    height: 65px;
+    border-radius: 4.78px;
 }

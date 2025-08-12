@@ -8,6 +8,10 @@ import cloud from '../../assets/cloud.png';
 import webhook from '../../assets/webhook.png';
 import sheild from '../../assets/shield.png';
 import puzzle from '../../assets/puzzle.png';
+import values from '../../assets/values.png';
+import mission from '../../assets/mission.png';
+import vision from '../../assets/vision.png';
+import ciao from '../../assets/Caio.png';
 
 function Hero() {
   return (
@@ -85,6 +89,80 @@ function SectionThree() {
   )
 }
 
+function SectionFour() {
+  return (
+    <div className={styles["sect-four-wrapper"]}>
+      <div className={styles["four-top"]}>
+        <img src={values} alt="" />
+        <div className={styles["four-top-right"]}>
+          <h3>Our Values</h3>
+          <p>Development Before you invest in any technology, you need a plan. We work with you to assess your current state, identify key opportunities, and build a clear, phased roadmap for your digital journey.</p>
+        </div>
+      </div>
+      <div className={styles["four-bottom"]}>
+        <div className={styles["four-bottom-left"]}>
+          <img src={mission} alt="" />
+          <h3>Our Mission</h3>
+          <p>Drive innovation and empower businesses globally to embrace digitalization, attain sustainable growth, agility, and a more connected future.
+          </p>
+        </div>
+        <div className={styles["four-bottom-right"]}>
+          <img src={vision} alt="" />
+          <h3>Our Vision</h3>
+          <p>To be a leading power for good, enable every company does not matter how small to be connected to every corner of the world and utilize computing power to its full potential.
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function SectionFive() {
+  return (
+    <div className={styles["sect-five-wrapper"]}>
+      <h2>Meet the Team</h2>
+      <p>The team behind our tech — driven, creative, and cloud-focused.</p>
+      <div className={styles["sect-five-member"]}>
+        <img src={ciao} alt="" />
+        <div className={styles["sect-five-member-details"]}>
+          <h2>Caio Yoshida</h2>
+          <h3>Chief Executive Officer</h3>
+          <hr />
+          <p>Call out a feature, benefit, or value of your site, then link to a page where people can learn more about it.</p>
+        </div>
+      </div>
+      <div className={styles["sect-five-member"]}>
+        <div className={styles["sect-five-member-details"]}>
+          <h2>Caio Yoshida</h2>
+          <h3>Chief Executive Officer</h3>
+          <hr />
+          <p>Call out a feature, benefit, or value of your site, then link to a page where people can learn more about it.</p>
+        </div>
+        <img src={ciao} alt="" />
+      </div>
+      <div className={styles["sect-five-member"]}>
+        <img src={ciao} alt="" />
+        <div className={styles["sect-five-member-details"]}>
+          <h2>Caio Yoshida</h2>
+          <h3>Chief Executive Officer</h3>
+          <hr />
+          <p>Call out a feature, benefit, or value of your site, then link to a page where people can learn more about it.</p>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function SectionSix() {
+  return(
+    <div className={styles["sect-six-wrapper"]}>
+      <h2>Ready to take your business to another level?</h2>
+      <p>Let our Family help you with a strategic road map and the right tools to boost efficiency, connect with more customers, and secure your future growth.</p>
+      <div className={styles["abt-btn-wrapper"]}><button className={styles["abt-btn"]}>Get Started <img src={arrowRight} alt="" /></button></div>
+    </div>
+  )
+}
+
 function About() {
   return (
     <>
@@ -92,6 +170,10 @@ function About() {
       <hr />
       <SectionTwo />
       <SectionThree />
+      <SectionFour />
+      <hr />
+      <SectionFive />
+      <SectionSix/>
     </>
   )
 }
