@@ -1,35 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import Navbar from './Components/Navbar/Index';
+import PageTransition from './Components/PageTransition/Index';
+import './App.css';
+import Home from './Pages/Home/Index';
+import About from './Pages/About/Index';
+import Services from './Pages/Services/Index';
+import Contact from './Pages/Contact/Index';
+import Footer from './Components/Footer/Index';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function AnimatedRoutes() {
+  const location = useLocation();
+  
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route path="/" element={
+          <PageTransition>
+            <Home />
+          </PageTransition>
+        }/>
+        <Route path="/about" element={
+          <PageTransition>
+            <About />
+          </PageTransition>
+        }/>
+        <Route path="/services" element={
+          <PageTransition>
+            <Services />
+          </PageTransition>
+        }/>
+        <Route path="/contact" element={
+          <PageTransition>
+            <Contact />
+          </PageTransition>
+        }/>
+      </Routes>
+    </AnimatePresence>
+  );
 }
 
-export default App
+function App() {
+  return (
+    <Router>
+      <Navbar/>
+      <AnimatedRoutes />
+      <Footer/>
+    </Router>
+  );
+}
+
+export default App;
