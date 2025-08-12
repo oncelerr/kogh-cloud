@@ -14,6 +14,70 @@
   justify-content: center;
 }
 
+.scrollTextWrapper {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.scrollText {
+  color: white;
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  transition: opacity 0.5s ease-out;
+  will-change: opacity;
+  font-family: 'Poppins', sans-serif;
+}
+
+.scrollIndicator {
+  width: 20px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.circle {
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: scrollMove 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollMove {
+  0% {
+    top: 5px;
+    opacity: 1;
+  }
+
+  80% {
+    top: 25px;
+    opacity: 0;
+  }
+
+  100% {
+    top: 5px;
+    opacity: 1;
+  }
+}
+
+
 .videoBg {
   position: absolute;
   top: 0;
@@ -32,7 +96,7 @@
   padding: 2rem;
   max-width: 800px;
   margin: 0 auto;
-  
+
   h1 {
     font-size: 3rem;
     margin-bottom: 1.5rem;
@@ -48,12 +112,12 @@
   justify-content: center;
   padding: 2rem;
   background-color: #f5f5f5;
-  
+
   h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
   }
-  
+
   p {
     font-size: 1.2rem;
     color: #666;
@@ -67,14 +131,161 @@
       font-size: 2rem;
     }
   }
-  
+
   .contentSection {
     h2 {
       font-size: 1.8rem;
     }
-    
+
     p {
       font-size: 1rem;
     }
   }
+}
+
+.sect-two-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.sect-two-wrapper {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.9) 0%, rgba(255,255,255,0.7) 100%);
+  padding: 2rem 0;
+  min-height: 800px; /* Fixed height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; /* Prevent content from spilling out */
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100%;
+    background-image: url('../../assets/contactbg.png');
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
+    z-index: -1;
+    pointer-events: none;
+  }
+}
+
+.sect-two-wrapper img {
+  display: none; /* Hide the img element since we're using it as a background */
+}
+
+.sect-two-wrapper h2{
+  margin: 0;
+  text-align: left;
+  width: 1180px;
+  margin-top: 85px;
+}
+
+.sect-two-wrapper p{
+  margin: 0;
+  color: black !important;
+  width: 1180px;
+}
+
+.sect-two-wrapper h3{
+  margin: 0;
+  width: 1180px;
+  margin-top: 114px;
+  text-align: center;
+}
+
+.sect-two-form {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  width: 1180px;
+  margin-top: 40px;
+}
+
+.sect-two-form-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+  img {
+    max-width: 200px;
+    height: auto;
+  }
+}
+
+.sect-two-form-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.sect-two-form-left-input {
+  all: unset;
+  font-family: 'Sora', sans-serif;
+  font-size: 16px;
+  width: 572px;
+  height: 66.89px;
+  border-bottom: 1px solid #CACACA;
+}
+
+.sect-two-form-left-textarea {
+  all: unset;
+  font-family: 'Sora', sans-serif;
+  font-size: 16px;
+  width: 572px;
+  min-height: 66.89px;
+  border-bottom: 1px solid #CACACA;
+  resize: both;
+  overflow: auto;
+  padding-right: 24px; /* Space for the resize handle */
+  
+  /* Custom resize handle */
+  &::-webkit-resizer {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23CACACA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21 3H3v18h18z'/%3E%3Cpath d='M21 15H9l6-12'/%3E%3Cpath d='M15 15l6-12'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 12px 12px;
+    width: 24px;
+    height: 24px;
+    opacity: 0.7;
+    cursor: se-resize;
+  }
+  
+  /* Firefox */
+  & {
+    scrollbar-width: none; /* Hide default scrollbar */
+  }
+  
+  &::-webkit-scrollbar {
+    display: none; /* Hide default scrollbar */
+  }
+}
+
+.btn-wrapper {
+    background: rgba(0, 0, 0, 0.2);
+    padding: .4rem;
+    border-radius: 4.78px;
+    width: fit-content;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black !important;
+    width: 262.96px;
+    height: 77.69px;
+    border-radius: 4.78px;
 }
