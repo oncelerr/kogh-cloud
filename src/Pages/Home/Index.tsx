@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './styles.module.scss';
 import vid from '../../assets/H1.mp4';
 import icon from '../../assets/kogh-icon.png';
@@ -78,9 +78,6 @@ function FourthSection() {
     { id: 3, src: vid }
   ];
 
-  // Import the line image
-  const lineImage = line;
-
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex === videos.length - 1 ? 0 : prevIndex + 1));
   };
@@ -120,7 +117,7 @@ function FourthSection() {
               className={styles['carousel-track']}
               style={{ transform: `translateX(-${currentIndex * 100}%)` }}
             >
-              {videos.map((video, index) => (
+              {videos.map((video) => (
                 <div key={video.id} className={styles['carousel-slide']}>
                   <video
                     className={styles['carousel-video']}

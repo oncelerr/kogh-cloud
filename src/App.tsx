@@ -16,22 +16,22 @@ function AnimatedRoutes() {
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={
-          <PageTransition>
+          <PageTransition backgroundColor={''}>
             <Home />
           </PageTransition>
         }/>
         <Route path="/about" element={
-          <PageTransition>
+          <PageTransition backgroundColor={''}>
             <About />
           </PageTransition>
         }/>
         <Route path="/services" element={
-          <PageTransition>
+          <PageTransition backgroundColor={''}>
             <Services />
           </PageTransition>
         }/>
         <Route path="/contact" element={
-          <PageTransition>
+          <PageTransition backgroundColor={''}> 
             <Contact />
           </PageTransition>
         }/>
