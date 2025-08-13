@@ -26,7 +26,7 @@ function Hero() {
         <h1 className={styles["hero-h1"]}>Future-Proof Your <br />Business with <br /> <span className={styles["hero-gradient1"]}>Digital Strategy</span> </h1>
         <h3 className={styles["hero-h1"]}>Don't just compete, lead. </h3>
         <p className={styles["hero-p"]}>We guide your business through a strategic digital transformation, turning technology into your greatest competitive advantage.</p>
-        <div className={styles["btn-wrapper"]}><button>Get Started <img src={arrowRight} alt="" /></button></div>
+        <div className={styles["btn-wrapper"]}><button>Our Services <img src={arrowRight} alt="" /></button></div>
       </div>
       <div className={styles["hero-right"]}>
         <img src={heroImage2} alt="" />

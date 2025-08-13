@@ -5,6 +5,9 @@ import vidBg from '../../assets/vid-bg.mp4';
 import styles from './styles.module.scss';
 import arrowRight from '../../assets/arrow-right.png';
 import qr2 from '../../assets/qr2.png';
+import location from '../../assets/location-dot.png'
+import phone from '../../assets/phone.png'
+import envelope from '../../assets/envelope.png'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -125,11 +128,67 @@ function SectionTwo() {
   )
 }
 
+function SectionThree() {
+  return (
+    <div className={styles['sect-three-wrapper']}>
+      <div className={styles['sect-three-left']}>
+        <h2>Get in Touch</h2>
+        <h4>KOGH Cloud Solutions Inc.</h4>
+        <div className={styles['address-cont']}>
+          <div className={styles['address-icon']}>
+            <img src={location} alt="" />
+          </div>
+          <p>Unit 905, Civic Place Bldg, 2301 Civic <br /> Drive, Filinvest-Alabang, Muntinlupa <br />City, 1780</p>
+        </div>
+        <div className={styles['address-cont']}>
+          <div className={styles['address-icon']}>
+            <img src={phone} alt="" />
+          </div>
+          <p>+63 917 308 7170 | PH</p>
+        </div>
+        <div className={styles['address-cont']}>
+          <div className={styles['address-icon']}>
+            <img src={phone} alt="" />
+          </div>
+          <p>+55 11 97764-7271 | BR</p>
+        </div>
+        <div className={styles['address-cont']}>
+          <div className={styles['address-icon2']}>
+            <img src={envelope} alt="" />
+          </div>
+          <p>contact-us@kogh.cloud</p>
+        </div>
+      </div>
+      <div className={styles['mapContainer']}>
+        <div className={styles['mapCanvas']}>
+          <iframe
+            title="Google Maps Location"
+            className={styles['iframe']}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps/embed/v1/place?q=Unit%20905%2C%20Civic%20Place%20Bldg%2C%202301%20Civic%20Drive%2C%20Filinvest-Alabang%2C%20Muntinlupa%20City%2C%201780&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+          />
+        </div>
+        <a
+          href="https://norsumediagroup.com/embed-google-map-website-free"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ display: 'none' }}
+        >
+          Embed Map on Website for Free
+        </a>
+      </div>
+    </div>
+  )
+}
+
 const Contact = () => {
   return (
     <>
       <Hero />
       <SectionTwo />
+      <SectionThree />
     </>
   )
 };
