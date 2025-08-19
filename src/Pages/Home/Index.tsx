@@ -73,9 +73,21 @@ function ThirdSection() {
 function FourthSection() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const videos = [
-    { id: 1, src: vid },
-    { id: 2, src: vid },
-    { id: 3, src: vid }
+    { 
+      id: 1, 
+      embedUrl: "https://www.youtube.com/embed/2PVGkEGMdu0?si=CB7J-C6g8JOi8nxG",
+      title: "YouTube video player 1"
+    },
+    { 
+      id: 2, 
+      embedUrl: "https://www.youtube.com/embed/lDYwJdrKgQg?si=fNIB_RRbDvCHCA-R",
+      title: "YouTube video player 2"
+    },
+    { 
+      id: 3, 
+      embedUrl: "https://www.youtube.com/embed/QlIBQi3vh_Q?si=4xDS_eR6Z8aXxpD7",
+      title: "YouTube video player 3"
+    }
   ];
 
   const nextSlide = () => {
@@ -119,13 +131,15 @@ function FourthSection() {
             >
               {videos.map((video) => (
                 <div key={video.id} className={styles['carousel-slide']}>
-                  <video
-                    className={styles['carousel-video']}
-                    src={video.src}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={video.embedUrl}
+                    title={video.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className={styles['youtube-embed']}
                   />
                 </div>
               ))}

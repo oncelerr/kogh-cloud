@@ -12,6 +12,8 @@ import values from '../../assets/values.png';
 import mission from '../../assets/mission.png';
 import vision from '../../assets/vision.png';
 import ciao from '../../assets/Caio.png';
+import richard from '../../assets/Richard.png';
+import { useEffect, useState } from 'react'
 
 function Hero() {
   return (
@@ -90,31 +92,90 @@ function SectionThree() {
 }
 
 function SectionFour() {
+  const [isWide, setIsWide] = useState(false);
+
+  useEffect(() => {
+    const checkWidth = () => setIsWide(window.innerWidth > 1440);
+    checkWidth();
+    window.addEventListener("resize", checkWidth);
+    return () => window.removeEventListener("resize", checkWidth);
+  }, []);
+
   return (
     <div className={styles["sect-four-wrapper"]}>
-      <div className={styles["four-top"]}>
-        <img src={values} alt="" />
-        <div className={styles["four-top-right"]}>
-          <h3>Our Values</h3>
-          <p>Development Before you invest in any technology, you need a plan. We work with you to assess your current state, identify key opportunities, and build a clear, phased roadmap for your digital journey.</p>
-        </div>
-      </div>
-      <div className={styles["four-bottom"]}>
-        <div className={styles["four-bottom-left"]}>
-          <img src={mission} alt="" />
-          <h3>Our Mission</h3>
-          <p>Drive innovation and empower businesses globally to embrace digitalization, attain sustainable growth, agility, and a more connected future.
-          </p>
-        </div>
-        <div className={styles["four-bottom-right"]}>
-          <img src={vision} alt="" />
-          <h3>Our Vision</h3>
-          <p>To be a leading power for good, enable every company does not matter how small to be connected to every corner of the world and utilize computing power to its full potential.
-          </p>
-        </div>
-      </div>
+      {isWide ? (
+        <>
+          <h2>Our Core Values</h2>
+          <div className={styles["four-bottom"]}>
+            <div className={styles["four-bottom-left"]}>
+              <img src={mission} alt="" />
+              <h3>Our Mission</h3>
+              <p>
+                Drive innovation and empower businesses globally to embrace
+                digitalization, attain sustainable growth, agility, and a more
+                connected future.
+              </p>
+            </div>
+            <div className={styles["four-bottom-right"]}>
+              <img src={vision} alt="" />
+              <h3>Our Vision</h3>
+              <p>
+                To be a leading power for good, enable every company does not
+                matter how small to be connected to every corner of the world
+                and utilize computing power to its full potential.
+              </p>
+            </div>
+            <div className={styles["four-top"]}>
+              <img className={styles["four-top-img"]} src={values} alt="" />
+              <h3>Our Values</h3>
+              <p>
+                Development Before you invest in any technology, you need a plan.
+                We work with you to assess your current state, identify key
+                opportunities, and build a clear, phased roadmap for your
+                digital journey.
+              </p>
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          {/* Stacked layout (1440px and below) */}
+          <div className={styles["four-top"]}>
+            <img src={values} alt="" />
+            <div className={styles["four-top-right"]}>
+              <h3>Our Values</h3>
+              <p>
+                Development Before you invest in any technology, you need a plan.
+                We work with you to assess your current state, identify key
+                opportunities, and build a clear, phased roadmap for your
+                digital journey.
+              </p>
+            </div>
+          </div>
+          <div className={styles["four-bottom"]}>
+            <div className={styles["four-bottom-left"]}>
+              <img src={mission} alt="" />
+              <h3>Our Mission</h3>
+              <p>
+                Drive innovation and empower businesses globally to embrace
+                digitalization, attain sustainable growth, agility, and a more
+                connected future.
+              </p>
+            </div>
+            <div className={styles["four-bottom-right"]}>
+              <img src={vision} alt="" />
+              <h3>Our Vision</h3>
+              <p>
+                To be a leading power for good, enable every company does not
+                matter how small to be connected to every corner of the world
+                and utilize computing power to its full potential.
+              </p>
+            </div>
+          </div>
+        </>
+      )}
     </div>
-  )
+  );
 }
 
 function SectionFive() {
@@ -128,7 +189,7 @@ function SectionFive() {
           <h2>Caio Yoshida</h2>
           <h3>Chief Executive Officer</h3>
           <hr />
-          <p>Call out a feature, benefit, or value of your site, then link to a page where people can learn more about it.</p>
+          <p>A dynamic and results-driven Global Operations Leader with over 12 years of experience driving business growth across diverse international markets (APAC, China, LATAM), directing multi-country operations, and forging strategic vendor partnerships. Proven success in launching new business units, pioneering market entry into Brazil, and holding full P&L responsibility. A multilingual communicator (5 languages) dedicated to optimizing performance, obsessed about customer service delivery and achieving world-class operational excellence.</p>
         </div>
       </div>
       <div className={styles["sect-five-member"]}>
@@ -141,12 +202,12 @@ function SectionFive() {
         <img src={ciao} alt="" />
       </div>
       <div className={styles["sect-five-member"]}>
-        <img src={ciao} alt="" />
+        <img src={richard} alt="" />
         <div className={styles["sect-five-member-details"]}>
-          <h2>Caio Yoshida</h2>
-          <h3>Chief Executive Officer</h3>
+          <h2>Richard Cayrel</h2>
+          <h3>Chief Technology Officer</h3>
           <hr />
-          <p>Call out a feature, benefit, or value of your site, then link to a page where people can learn more about it.</p>
+          <p>A highly accomplished and certified Network Engineer with extensive expertise in designing, implementing, and securing complex enterprise and cloud network infrastructures. Proven ability to master emerging technologies, demonstrated by advanced certifications in Cisco (CCNP Enterprise), Microsoft Azure (Security and Network Engineer), and Cybersecurity (CompTIA Security+). A dedicated authority committed to building robust, scalable, and secure network solutions that drive business success.</p>
         </div>
       </div>
     </div>
@@ -154,7 +215,7 @@ function SectionFive() {
 }
 
 function SectionSix() {
-  return(
+  return (
     <div className={styles["sect-six-wrapper"]}>
       <h2>Ready to take your business to another level?</h2>
       <p>Let our Family help you with a strategic road map and the right tools to boost efficiency, connect with more customers, and secure your future growth.</p>
@@ -173,7 +234,7 @@ function About() {
       <SectionFour />
       <hr />
       <SectionFive />
-      <SectionSix/>
+      <SectionSix />
     </>
   )
 }

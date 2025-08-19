@@ -100,16 +100,21 @@ hr {
     padding: 137px 84px;
     background: url('../../assets/gradient-bg.png') no-repeat center center;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .three-top {
     display: flex;
+    gap: 38px;
 }
 
 .top-left {
     display: flex;
     flex-direction: column;
-    gap: 31px;
+    gap: 32px;
 }
 
 .top-left h3 {
@@ -122,12 +127,13 @@ hr {
     font-size: 18px !important;
     font-weight: 300 !important;
     margin: 0;
+    width: 868px !important;
 }
 
 .abt-btn-wrapper {
     margin-top: 32px;
     background: rgba(0, 0, 0, 0.2);
-    padding: .4rem;
+    padding: 5px 9px;
     border-radius: 4.78px;
 }
 
@@ -144,7 +150,7 @@ hr {
 
 .three-bottom {
     display: flex;
-    gap: 20px;
+    gap: 18px;
     margin-top: 40px;
 }
 
@@ -157,7 +163,7 @@ hr {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     flex: 1;
-    max-width: 300px;
+    width: calc(281.5px - 46px);
 }
 
 .three-card:hover {
@@ -198,6 +204,7 @@ hr {
     padding: calc(47px - 32px);
 }
 
+
 .sect-four-wrapper {
     display: flex;
     flex-direction: column;
@@ -209,7 +216,28 @@ hr {
     display: flex;
 }
 
-.four-top img {
+@media (min-width: 1441px) {
+    .sect-four-wrapper h2 {
+        gap: 0 !important;
+        margin: 0;
+    }
+
+    .four-top {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: center;
+    }
+
+    .four-top-img {
+        width: 322px !important;
+        height: 240px !important;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+.four-top-img {
     width: 473px;
     height: 343px;
 }
@@ -307,17 +335,18 @@ hr {
     gap: 24px;
 }
 
-.sect-six-wrapper h2{
+.sect-six-wrapper h2 {
     white-space: nowrap;
     color: white !important;
     margin: 0;
 }
-.sect-six-wrapper p{
+
+.sect-six-wrapper p {
     color: white !important;
     margin: 0;
 }
 
-.sect-six-wrapper .abt-btn-wrapper{
+.sect-six-wrapper .abt-btn-wrapper {
     margin-top: 0 !important;
     background: rgba(0, 0, 0, 0.2);
     padding: .4rem;
