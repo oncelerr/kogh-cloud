@@ -394,3 +394,67 @@ iframe {
   color: #6c757d;
   text-decoration: none;
 }
+
+@media (max-width: 768px) {
+  .sect-two-wrapper {
+    padding: 42px 24px;
+  }
+
+  .sect-two-wrapper h2 {
+    font-size: 28px;
+    width: 312px;
+    margin: 0;
+  }
+
+  .sect-two-wrapper p {
+    font-size: 14px;
+    width: 312px;
+    margin: 0;
+    margin-top: 24px;
+  }
+
+  .sect-two-wrapper h3 {
+    font-size: 28px;
+    width: 312px;
+    margin: 0;
+    margin-top: 89px;
+    text-align: left;
+  }
+
+  .sect-two-form {
+    flex-direction: column-reverse;
+    width: 312px;
+    gap: 0;
+  }
+
+  .sect-two-form-right {
+    width: 100%;
+    margin: 0;
+  }
+
+  .sect-two-form-right img {
+    margin: 0;
+  }
+
+  .sect-two-form-left {
+    width: 100%;
+  }
+
+  .sect-two-form-left-input {
+    width: 100%;
+  }
+
+  .sect-two-form-left-textarea {
+    margin-top: 24px;
+    width: calc(100% - 24px);
+  }
+
+  .sect-three-wrapper {
+    flex-direction: column;
+    gap: 12px;
+    padding: 47px 24px;
+  }
+  .sect-three-left {
+    width: 100%;
+  }
+}

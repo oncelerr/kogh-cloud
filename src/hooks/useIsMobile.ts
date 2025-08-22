@@ -5,18 +5,28 @@ const useIsMobile = (breakpoint = 768): boolean => {
 
   useEffect(() => {
     const checkIfMobile = () => {
-      setIsMobile(window.innerWidth < breakpoint);
+      const mobile = window.innerWidth < breakpoint;
+      console.log('Window width:', window.innerWidth, 'Breakpoint:', breakpoint, 'Is mobile:', mobile);
+      setIsMobile(mobile);
     };
 
-    // Initial check
-    checkIfMobile();
+    // Initial check with a small delay to ensure proper calculation
+    const timer = setTimeout(checkIfMobile, 100);
 
-    // Add event listener for window resize
-    window.addEventListener('resize', checkIfMobile);
+    // Add event listener for window resize with debounce
+    let resizeTimer: ReturnType<typeof setTimeout>;
+    const handleResize = () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(checkIfMobile, 100);
+    };
+
+    window.addEventListener('resize', handleResize, { passive: true });
 
     // Cleanup
     return () => {
-      window.removeEventListener('resize', checkIfMobile);
+      clearTimeout(timer);
+      clearTimeout(resizeTimer);
+      window.removeEventListener('resize', handleResize);
     };
   }, [breakpoint]);
 

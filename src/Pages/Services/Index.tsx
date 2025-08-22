@@ -8,6 +8,7 @@ import eyeSlash from '../../assets/eye-slash.png'
 import exclamation from '../../assets/circle-exclamation.png'
 import faceFrown from '../../assets/face-frown.png'
 import sectTwoAnswerRight from '../../assets/sect-two-answer-right.png'
+import sectTwoAnswerRightMobile from '../../assets/sect-two-answer-right-mobile.png'
 import gridImg from '../../assets/grid-img.png'
 import gridImg2 from '../../assets/grid-img2.png'
 import proccess from '../../assets/process.png'
@@ -39,6 +40,7 @@ function SectionTwo() {
   return (
     <div className={styles["sect-two-wrapper"]}>
       <h2>Is Your Business Being Left Behind?</h2>
+      <img className={styles["sect-two-wrapper-img-mobile"]} src={sectTwoAnswerRightMobile} alt="" />
       <p>In today's digital-first economy, standing still is the same as moving backward. <br />Many businesses are facing critical challenges that impact their growth, efficiency, and customer loyalty.</p>
       <div className={styles["hr"]}></div>
       <div className={styles["sect-two-answer"]}>

@@ -2,6 +2,7 @@ import styles from './styles.module.scss'
 import heroImage from '../../assets/hero-image.png'
 import g1 from '../../assets/Group137.png'
 import grpImg from '../../assets/grp-img.png'
+import grpImgMobile from '../../assets/grp-img-mobile.png'
 import kogh from '../../assets/kogh.svg'
 import arrowRight from '../../assets/arrow-right.png';
 import cloud from '../../assets/cloud.png';
@@ -14,6 +15,7 @@ import vision from '../../assets/vision.png';
 import ciao from '../../assets/Caio.png';
 import richard from '../../assets/Richard.png';
 import { useEffect, useState } from 'react'
+import useIsMobile from '../../hooks/useIsMobile'
 
 function Hero() {
   return (
@@ -31,10 +33,12 @@ function Hero() {
 }
 
 function SectionTwo() {
+  
   return (
     <div className={styles["sect-two-wrapper"]}>
       <div className={styles["two-left"]}>
-        <img src={grpImg} alt="" />
+        <img className={styles["two-left-img-desktop"]} src={grpImg} alt="" />
+        <img className={styles["two-left-img-mobile"]} src={grpImgMobile} alt="" />
       </div>
       <div className={styles["two-right"]}>
         <h2>How <img src={kogh} alt="" /> Started</h2>
@@ -89,12 +93,14 @@ function SectionThree() {
           <p>Move your data and apps to the cloud smoothly and securely.</p>
         </div>
       </div>
+      <div className={styles["abt-btn-wrapper"]}><button className={styles["abt-btn"]}>Get Started <img src={arrowRight} alt="" /></button></div>
     </div>
   )
 }
 
 function SectionFour() {
   const [isWide, setIsWide] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const checkWidth = () => setIsWide(window.innerWidth > 1440);
@@ -105,7 +111,7 @@ function SectionFour() {
 
   return (
     <div className={styles["sect-four-wrapper"]}>
-      {isWide ? (
+      {isWide || isMobile ? (
         <>
           <h2>Our Core Values</h2>
           <div className={styles["four-bottom"]}>
@@ -118,6 +124,7 @@ function SectionFour() {
                 connected future.
               </p>
             </div>
+            <div className={styles["hr"]}></div>
             <div className={styles["four-bottom-right"]}>
               <img src={vision} className={styles["vision-img"]} alt="" />
               <h3>Our Vision</h3>
@@ -127,6 +134,7 @@ function SectionFour() {
                 and utilize computing power to its full potential.
               </p>
             </div>
+            <div className={styles["hr"]}></div>
             <div className={styles["four-top"]}>
               <img className={styles["four-top-img"]} src={values} alt="" />
               <h3>Our Values</h3>
@@ -224,7 +232,7 @@ function About() {
       <SectionTwo />
       <SectionThree />
       <SectionFour />
-      <hr />
+      <div className={styles["main-hr"]}></div>
       <SectionFive />
       <SectionSix />
     </>
