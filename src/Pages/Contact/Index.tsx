@@ -167,7 +167,7 @@ function SectionThree() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed/v1/place?q=Unit%20905%2C%20Civic%20Place%20Bldg%2C%202301%20Civic%20Drive%2C%20Filinvest-Alabang%2C%20Muntinlupa%20City%2C%201780&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+            src="https://www.google.com/maps/embed/v1/place?q=Kogh%20Cloud&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
           />
         </div>
         <a

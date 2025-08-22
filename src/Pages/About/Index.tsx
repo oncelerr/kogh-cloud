@@ -108,7 +108,7 @@ function SectionFour() {
           <h2>Our Core Values</h2>
           <div className={styles["four-bottom"]}>
             <div className={styles["four-bottom-left"]}>
-              <img src={mission} alt="" />
+              <img src={mission} className={styles["mission-img"]} alt="" />
               <h3>Our Mission</h3>
               <p>
                 Drive innovation and empower businesses globally to embrace
@@ -117,7 +117,7 @@ function SectionFour() {
               </p>
             </div>
             <div className={styles["four-bottom-right"]}>
-              <img src={vision} alt="" />
+              <img src={vision} className={styles["vision-img"]} alt="" />
               <h3>Our Vision</h3>
               <p>
                 To be a leading power for good, enable every company does not
@@ -140,8 +140,8 @@ function SectionFour() {
       ) : (
         <>
           {/* Stacked layout (1440px and below) */}
-          <div className={styles["four-top"]}>
-            <img src={values} alt="" />
+          <div className={styles["four-top"]} style={{ display: "flex", gap: "48px" }}>
+            <img src={values} className={styles["values-img"]} alt="" />
             <div className={styles["four-top-right"]}>
               <h3>Our Values</h3>
               <p>
@@ -154,7 +154,7 @@ function SectionFour() {
           </div>
           <div className={styles["four-bottom"]}>
             <div className={styles["four-bottom-left"]}>
-              <img src={mission} alt="" />
+              <img src={mission} className={styles["mission-img"]} alt="" />
               <h3>Our Mission</h3>
               <p>
                 Drive innovation and empower businesses globally to embrace
@@ -163,7 +163,7 @@ function SectionFour() {
               </p>
             </div>
             <div className={styles["four-bottom-right"]}>
-              <img src={vision} alt="" />
+              <img src={vision} className={styles["vision-img"]} alt="" />
               <h3>Our Vision</h3>
               <p>
                 To be a leading power for good, enable every company does not
@@ -194,14 +194,14 @@ function SectionFive() {
       </div>
       <div className={styles["sect-five-member"]}>
         <div className={styles["sect-five-member-details"]}>
-          <h2>Caio Yoshida</h2>
-          <h3>Chief Executive Officer</h3>
+          <h2>Richard Cayrel</h2>
+          <h3>Chief Technology Officer</h3>
           <hr />
-          <p>Call out a feature, benefit, or value of your site, then link to a page where people can learn more about it.</p>
+          <p>A highly accomplished and certified Network Engineer with extensive expertise in designing, implementing, and securing complex enterprise and cloud network infrastructures. Proven ability to master emerging technologies, demonstrated by advanced certifications in Cisco (CCNP Enterprise), Microsoft Azure (Security and Network Engineer), and Cybersecurity (CompTIA Security+). A dedicated authority committed to building robust, scalable, and secure network solutions that drive business success.</p>
         </div>
-        <img src={ciao} alt="" />
+        <img src={richard} alt="" />
       </div>
-      <div className={styles["sect-five-member"]}>
+      {/* <div className={styles["sect-five-member"]}>
         <img src={richard} alt="" />
         <div className={styles["sect-five-member-details"]}>
           <h2>Richard Cayrel</h2>
@@ -209,7 +209,7 @@ function SectionFive() {
           <hr />
           <p>A highly accomplished and certified Network Engineer with extensive expertise in designing, implementing, and securing complex enterprise and cloud network infrastructures. Proven ability to master emerging technologies, demonstrated by advanced certifications in Cisco (CCNP Enterprise), Microsoft Azure (Security and Network Engineer), and Cybersecurity (CompTIA Security+). A dedicated authority committed to building robust, scalable, and secure network solutions that drive business success.</p>
         </div>
-      </div>
+      </div> */}
     </div>
   )
 }
