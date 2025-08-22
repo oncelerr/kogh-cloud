@@ -2,7 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import styles from './styles.module.scss';
 import vid from '../../assets/H1.mp4';
 import icon from '../../assets/kogh-icon.png';
-import text from '../../assets/hero-text.png';
+import textDesktop from '../../assets/hero-text.png'
+import textMobile from '../../assets/hero-text-mobile.png';
 import arrowRight from '../../assets/arrow-right.png';
 import line from '../../assets/Line.png'
 import g1 from '../../assets/Group137.png'
@@ -28,11 +29,11 @@ function Hero() {
       <div className={styles["content"]}>
         <img className={styles["icon"]} src={icon} alt="Kogh Icon" />
         <img 
-          className={`${styles["text"]} ${isMobile ? styles["hero-text-mobile"] : ''}`} 
-          src={text} 
+          className={styles["text"]} 
+          src={isMobile ? textMobile : textDesktop} 
           alt="" 
         />
-        <p>Discover your untapped potential and reach new heights <br />Services and Solutions that Secure, Improve, and Scale your Business.</p>
+        <p>Discover your untapped potential and reach new heights Services and Solutions that Secure, Improve, and Scale your Business.</p>
         <div className={styles["btn-wrapper"]}><button>Get Started <img src={arrowRight} alt="" /></button></div>
       </div>
     </div>
@@ -58,7 +59,7 @@ function ThirdSection() {
       <div className={styles['top']}>
         <div className={styles['left']}>
           <h3>Don’t let your business fall behind</h3>
-          <p className={styles['left-desc']}>Letting your business fall behind is not a slow, gentle decline. <br />It's a rapid loss of competitiveness, efficiency, and customer <br />loyalty. Technology isn't a threat; it's the single most powerful <br />enabler for growth, innovation, and resilience available to you. <br />This guide will explore why you can't afford to be left behind and <br />provide a clear roadmap for thriving.</p>
+          <p className={styles['left-desc']}>Letting your business fall behind is not a slow, gentle decline. It's a rapid loss of competitiveness, efficiency, and customer loyalty. Technology isn't a threat; it's the single most powerful enabler for growth, innovation, and resilience available to you. This guide will explore why you can't afford to be left behind and provide a clear roadmap for thriving.</p>
         </div>
         <div className={styles['right']}>
           <img className={styles['right-img']} src={right} alt="" />

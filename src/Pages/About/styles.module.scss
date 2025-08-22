@@ -28,9 +28,9 @@
 }
 
 .hero-right img {
-    height: 100%;
-    width: auto;
-    object-fit: contain;
+    height: 735px;
+    width: 535px;
+    object-fit: cover;
 }
 
 .hero-h1 {
@@ -81,14 +81,26 @@ hr {
     flex: 1;
 }
 
+.two-right .hr {
+    height: 1px;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 1) 0%, 
+        rgba(128, 128, 128, 1) 50%, 
+        rgba(255, 255, 255, 1) 100%
+    );
+    margin-bottom: 32px;
+}
+
 .two-right h2 {
     margin: 0;
     text-align: left;
+    margin-bottom: 32px;
 }
 
 .two-right p {
     color: black !important;
     width: 550px;
+    margin: 0;
 }
 
 .two-right h2 img {
@@ -343,6 +355,17 @@ hr {
     gap: 24px;
 }
 
+.sect-five-member-details .hr {
+    height: 1px;
+    width: 236px;
+    background: linear-gradient(90deg, 
+        rgba(255, 255, 255, 1) 0%, 
+        rgba(128, 128, 128, 1) 50%, 
+        rgba(255, 255, 255, 1) 100%
+    );
+}
+
+
 .sect-five-member-details h2 {
     text-align: left !important;
     margin: 0 !important;
@@ -351,6 +374,7 @@ hr {
 .sect-five-member-details h3 {
     text-align: left !important;
     margin: 0 !important;
+    color: #525252 !important;
 }
 
 .sect-six-wrapper {

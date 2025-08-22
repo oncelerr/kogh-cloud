@@ -49,6 +49,10 @@
     z-index: 1;
 }
 
+.content p {
+    width: 600px;
+}
+
 .hero-wrapper h1 {
     text-align: center;
     color: white;
@@ -80,7 +84,7 @@
     align-items: center;
     color: white;
     background-color: black !important;
-    width: 262.96px !important; 
+    width: 262.96px !important;
     height: 77.69px !important;
     border-radius: 4.78px;
 }
@@ -205,7 +209,7 @@
 }
 
 .frth-section {
-    width: calc( 100% - 40px);
+    width: calc(100% - 40px);
     min-height: 60vh;
     display: flex;
     flex-direction: column;
@@ -240,7 +244,7 @@
     gap: 149px;
 }
 
-.prev-btn{
+.prev-btn {
     display: inline-block;
     border: 0;
     text-decoration: none;
@@ -255,7 +259,7 @@
     text-transform: uppercase;
 }
 
-.next-btn{
+.next-btn {
     display: inline-block;
     border: 0;
     text-decoration: none;
@@ -270,7 +274,8 @@
     text-transform: uppercase;
 }
 
-.prev-btn button, .next-btn button {
+.prev-btn button,
+.next-btn button {
     background-color: transparent !important;
     height: 52px !important;
     width: 52px !important;
@@ -285,7 +290,7 @@
     max-width: 1200px;
     margin: 40px auto 0;
     position: relative;
-    
+
     /* Decorative Lines */
     .decorative-line-top {
         position: absolute;
@@ -295,7 +300,7 @@
         opacity: 1 !important;
         pointer-events: none;
     }
-    
+
     .decorative-line-bottom {
         position: absolute;
         bottom: -30px;
@@ -329,7 +334,8 @@
 .carousel-slide {
     min-width: 100%;
     position: relative;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    padding-top: 56.25%;
+    /* 16:9 Aspect Ratio */
 }
 
 .carousel-video,
@@ -387,7 +393,7 @@
     padding: 108px 0;
     position: relative;
     overflow: hidden;
-    
+
     &::before {
         content: '';
         position: absolute;
@@ -409,13 +415,13 @@
     gap: 1rem;
 }
 
-.fth-left h2{
+.fth-left h2 {
     text-align: left !important;
     margin: 0;
     padding: 0;
 }
 
-.fth-left p{
+.fth-left p {
     text-align: left !important;
     color: black !important;
     margin: 0;
@@ -432,12 +438,13 @@
     .carousel-part {
         gap: 10px;
     }
-    
-    .prev-btn button, .next-btn button {
+
+    .prev-btn button,
+    .next-btn button {
         height: 40px !important;
         width: 40px !important;
     }
-    
+
     .indicator {
         width: 10px;
         height: 10px;
@@ -446,5 +453,111 @@
     .content .icon {
         width: 43px;
         height: auto;
+    }
+
+    .content p {
+        width: 350px;
+    }
+
+    .btn-wrapper {
+        background: rgba(0, 0, 0, 0.2);
+        padding: .4rem;
+        border-radius: 4.78px;
+    }
+
+    .btn-wrapper button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        background-color: black !important;
+        width: 153.27px !important;
+        height: 50.35px !important;
+        border-radius: 4.78px;
+        font-size: 11.19px;
+        gap: 13.37px;
+    }
+
+    .btn-wrapper img {
+        width: 14.71px !important;
+        height: 14.71px !important;
+    }
+
+    .top {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 7px;
+    }
+
+    .top .left {
+        display: flex;
+        align-items: center;
+    }
+
+    .top .left h3 {
+        font-size: 28px;
+        width: 330px;
+    }
+
+    .top .left p {
+        width: 330px;
+    }
+
+    .top .right {
+        display: flex;
+        justify-content: center;
+    }
+
+    .top .right .right-img {
+        width: 312px;
+    }
+
+    .bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .bottom .left {
+        display: flex;
+        align-items: center;
+    }
+
+    .bottom .left h3 {
+        font-size: 28px;
+        width: 330px;
+    }
+
+    .bottom .left p {
+        width: 330px;
+    }
+
+    .bottom .right {
+        display: flex;
+        justify-content: center;
+    }
+
+    .bottom .right .right-img {
+        width: 312px;
+    }
+
+    .fth-section {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 12px !important;
+    }
+
+    .fth-left {
+        display: flex !important;
+        align-items: center;
+    }
+
+    .fth-left h2 {
+        text-align: center !important;
+    }
+
+    .fth-left p {
+        text-align: center !important;
     }
 }

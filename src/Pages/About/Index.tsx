@@ -2,7 +2,7 @@ import styles from './styles.module.scss'
 import heroImage from '../../assets/hero-image.png'
 import g1 from '../../assets/Group137.png'
 import grpImg from '../../assets/grp-img.png'
-import kogh from '../../assets/kogh.png'
+import kogh from '../../assets/kogh.svg'
 import arrowRight from '../../assets/arrow-right.png';
 import cloud from '../../assets/cloud.png';
 import webhook from '../../assets/webhook.png';
@@ -21,7 +21,7 @@ function Hero() {
       <img className={styles["hero-dots"]} src={g1} alt="" />
       <div className={styles["hero-left"]}>
         <h1 className={styles["hero-h1"]}>Technology <br /> <span className={styles["hero-gradient1"]}>powered by Heart</span> </h1>
-        <p className={styles["hero-p"]}>Discover your untapped potential and reach new heights Services <br />and Solutions that Secure, Improve, and Scale your Business.</p>
+        <p className={styles["hero-p"]}>At Kogh Cloud, we create software from people, for people. We don't <br />ask, "Can we build it?" We ask, "How will this make life <br />better, easier, and more joyful?"</p>
       </div>
       <div className={styles["hero-right"]}>
         <img src={heroImage} alt="" />
@@ -38,13 +38,15 @@ function SectionTwo() {
       </div>
       <div className={styles["two-right"]}>
         <h2>How <img src={kogh} alt="" /> Started</h2>
-        <hr />
+        <div className={styles["hr"]}></div>
         <p>
           Kogh Cloud was founded on a shared passion for pushing the creative boundaries of technology. We’ve grown into a dynamic cloud consulting company with over 15 years of experience in Cloud Architecture, Development, Security, and Data Management.
         </p>
+        <br />
         <p>
           We believe technology is a key driver of business success. That’s why we focus on delivering tailored cloud solutions that support each client’s unique goals. Our team is made up of experienced professionals who are committed to continuous learning and staying updated with the latest trends and technologies.
         </p>
+        <br />
         <p>
           More than just providing services, we build long-term partnerships. We work closely with our clients to understand what matters most, review progress regularly, and ensure that every solution we deliver moves them forward.
         </p>
@@ -188,7 +190,7 @@ function SectionFive() {
         <div className={styles["sect-five-member-details"]}>
           <h2>Caio Yoshida</h2>
           <h3>Chief Executive Officer</h3>
-          <hr />
+          <div className={styles["hr"]}></div>
           <p>A dynamic and results-driven Global Operations Leader with over 12 years of experience driving business growth across diverse international markets (APAC, China, LATAM), directing multi-country operations, and forging strategic vendor partnerships. Proven success in launching new business units, pioneering market entry into Brazil, and holding full P&L responsibility. A multilingual communicator (5 languages) dedicated to optimizing performance, obsessed about customer service delivery and achieving world-class operational excellence.</p>
         </div>
       </div>
@@ -196,7 +198,7 @@ function SectionFive() {
         <div className={styles["sect-five-member-details"]}>
           <h2>Richard Cayrel</h2>
           <h3>Chief Technology Officer</h3>
-          <hr />
+          <div className={styles["hr"]}></div>
           <p>A highly accomplished and certified Network Engineer with extensive expertise in designing, implementing, and securing complex enterprise and cloud network infrastructures. Proven ability to master emerging technologies, demonstrated by advanced certifications in Cisco (CCNP Enterprise), Microsoft Azure (Security and Network Engineer), and Cybersecurity (CompTIA Security+). A dedicated authority committed to building robust, scalable, and secure network solutions that drive business success.</p>
         </div>
         <img src={richard} alt="" />
