@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import styles from './styles.module.scss';
 import vid from '../../assets/H1.mp4';
 import icon from '../../assets/kogh-icon.png';
@@ -11,8 +11,11 @@ import right from '../../assets/illustration1.png'
 import left from '../../assets/illustration2.png'
 import prev from '../../assets/prev-btn.png'
 import next from '../../assets/next-btn.png'
+import useIsMobile from '../../hooks/useIsMobile';
 
 function Hero() {
+  const isMobile = useIsMobile();
+  
   return (
     <div className={styles["hero-wrapper"]}>
       <div className={styles["video-background"]}>
@@ -24,7 +27,11 @@ function Hero() {
       </div>
       <div className={styles["content"]}>
         <img className={styles["icon"]} src={icon} alt="Kogh Icon" />
-        <img className={styles["text"]} src={text} alt="" />
+        <img 
+          className={`${styles["text"]} ${isMobile ? styles["hero-text-mobile"] : ''}`} 
+          src={text} 
+          alt="" 
+        />
         <p>Discover your untapped potential and reach new heights <br />Services and Solutions that Secure, Improve, and Scale your Business.</p>
         <div className={styles["btn-wrapper"]}><button>Get Started <img src={arrowRight} alt="" /></button></div>
       </div>

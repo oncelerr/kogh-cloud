@@ -1,5 +1,5 @@
 import styles from "./styles.module.scss"
-import footerlogo from '../../assets/navbar-logo.png'
+import footerlogo from '../../assets/footer-logo.svg'
 import insta from '../../assets/insta-logo.png'
 import x from '../../assets/x-logo.png'
 import phone from '../../assets/phone.png'
