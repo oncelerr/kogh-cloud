@@ -1,11 +1,27 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import navlogo from "../../assets/navbar-logo.png"
 import styles from "./styles.module.scss"
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, [pathname]);
+
+  return null;
+}
+
 function Navbar() {
   const navigate = useNavigate();
+
   return (
     <>
+      <ScrollToTop />
       <div className={styles['nav-wrapper']}>
         <img src={navlogo} alt="Kogh Cloud" />
         <div className={styles['nav-links']}>

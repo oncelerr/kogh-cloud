@@ -24,10 +24,10 @@ function Footer() {
           <div className={styles['right']}>
             <div className={styles['quick-links']}>
               <p className={styles['title']}>Quick Links</p>
-              <a onClick={() => navigate('/')}><p>Home</p></a>
-              <a onClick={() => navigate('/about')}><p>About</p></a>
-              <a onClick={() => navigate('/services')}><p>Services</p></a>
-              <a onClick={() => navigate('/contact')}><p>Contact Us</p></a>
+              <a onClick={() => navigate('/')} style={{ cursor: 'pointer' }}><p>Home</p></a>
+              <a onClick={() => navigate('/about')} style={{ cursor: 'pointer' }}><p>About</p></a>
+              <a onClick={() => navigate('/services')} style={{ cursor: 'pointer' }}><p>Services</p></a>
+              <a onClick={() => navigate('/contact')} style={{ cursor: 'pointer' }}><p>Contact Us</p></a>
             </div>
             <div className={styles['reach']}>
               <p className={styles['title']}>Reach Out to Us</p>
