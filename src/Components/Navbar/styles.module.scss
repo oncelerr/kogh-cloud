@@ -6,11 +6,18 @@
   flex-direction: row;
   padding: 0 10%;
   align-items: center;
-  position: sticky;
+  position: fixed; /* Changed from sticky to fixed */
   top: 0;
   left: 0;
+  right: 0;
   z-index: 1000;
   box-sizing: border-box;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Add padding to the body to prevent content from being hidden behind the fixed navbar */
+body {
+  padding-top: 80px;
 }
 
 .nav-logo {
