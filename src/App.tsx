@@ -76,7 +76,7 @@ function App() {
     <Router>
       <Navbar/>
       <AnimatedRoutes />
-      {/* <Footer/> */}
+      <Footer/>
       <ScrollToTopButton />
     </Router>
   );

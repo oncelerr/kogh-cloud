@@ -15,7 +15,7 @@ function Footer() {
         <div className={styles['top']}>
           <div className={styles['left']}>
             <img className={styles['footer-logo']} src={footerlogo} alt="Kogh Cloud" />
-            <p className={styles['desc']} >Empowering businesses through innovative<br />technology and strategic transformation.</p>
+            <p className={styles['desc']} >Empowering businesses through innovative technology and strategic transformation.</p>
             <div className={styles['social-links']}>
               <a href=""><img src={insta} alt="Kogh's Instagram" /></a>
               <a href=""><img src={x} alt="Kogh's X/Twitter" /></a>

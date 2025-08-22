@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import styles from './styles.module.scss';
 import vid from '../../assets/H1.mp4';
 import icon from '../../assets/kogh-icon.png';
