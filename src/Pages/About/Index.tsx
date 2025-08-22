@@ -141,7 +141,6 @@ function SectionFour() {
         </>
       ) : (
         <>
-          {/* Stacked layout (1440px and below) */}
           <div className={styles["four-top"]} style={{ display: "flex", gap: "48px" }}>
             <img src={values} className={styles["values-img"]} alt="" />
             <div className={styles["four-top-right"]}>
@@ -203,15 +202,6 @@ function SectionFive() {
         </div>
         <img src={richard} alt="" />
       </div>
-      {/* <div className={styles["sect-five-member"]}>
-        <img src={richard} alt="" />
-        <div className={styles["sect-five-member-details"]}>
-          <h2>Richard Cayrel</h2>
-          <h3>Chief Technology Officer</h3>
-          <hr />
-          <p>A highly accomplished and certified Network Engineer with extensive expertise in designing, implementing, and securing complex enterprise and cloud network infrastructures. Proven ability to master emerging technologies, demonstrated by advanced certifications in Cisco (CCNP Enterprise), Microsoft Azure (Security and Network Engineer), and Cybersecurity (CompTIA Security+). A dedicated authority committed to building robust, scalable, and secure network solutions that drive business success.</p>
-        </div>
-      </div> */}
     </div>
   )
 }

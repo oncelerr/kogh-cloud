@@ -41,7 +41,6 @@ function Footer() {
         <div className={styles['hr']}></div>
         <div className={styles['bottom']}>
           <p>Copyright 2025 © <a href="/">KOGH Cloud</a>. All rights reserved.</p>
-          <p>Made by <a href="https://vibehive.ph">Vibe Hive Digital Services</a></p>
         </div>
       </div>
     </>
