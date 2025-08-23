@@ -1,6 +1,6 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import navlogo from "../../assets/navbar-logo.png"
+import navlogo from "../../assets/lgo.svg"
 import hamburgerIcon from "../../assets/hamburger.png"
 import styles from "./styles.module.scss"
 
@@ -53,7 +53,7 @@ function Navbar() {
         <button 
           className={styles['hamburger-btn']} 
           onClick={toggleMenu}
-          aria-label="Toggle menu"
+          aria-label="Toggle menu" 
         >
           <img src={hamburgerIcon} alt="Menu" width={18} height={20} />
         </button>
