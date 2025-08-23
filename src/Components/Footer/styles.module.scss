@@ -36,6 +36,12 @@ p {
   width: 529px;
 }
 
+@media (max-width: 768px) {
+  .desc {
+    width: 100%;
+  }
+}
+
 .quick-links {
   display: flex;
   flex-direction: column;
