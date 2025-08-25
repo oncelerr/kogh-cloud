@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styles from './styles.module.scss'
 import heroImage2 from '../../assets/hero-image-2.png'
