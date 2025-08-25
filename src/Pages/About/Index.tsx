@@ -45,13 +45,13 @@ function SectionTwo() {
         <h2>How <img src={kogh} alt="" /> Started</h2>
         <div className={styles["hr"]}></div>
         <p>
-          Kogh Cloud was founded on a shared passion for pushing the creative boundaries of technology. We’ve grown into a dynamic cloud consulting company with over 15 years of experience in Cloud Architecture, Development, Security, and Data Management.
+          Kogh Cloud combines a passion for creative technology with deep industry expertise. Our team delivers premier cloud consulting, drawing on more than 15 years of specialized experience in Cloud Architecture, Development, Security, Data Management and Business Operations.
         </p>
-        <br />
+        <br /><br />
         <p>
           We believe technology is a key driver of business success. That’s why we focus on delivering tailored cloud solutions that support each client’s unique goals. Our team is made up of experienced professionals who are committed to continuous learning and staying updated with the latest trends and technologies.
         </p>
-        <br />
+        <br /><br />
         <p>
           More than just providing services, we build long-term partnerships. We work closely with our clients to understand what matters most, review progress regularly, and ensure that every solution we deliver moves them forward.
         </p>
