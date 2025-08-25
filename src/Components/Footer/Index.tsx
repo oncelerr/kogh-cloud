@@ -17,8 +17,8 @@ function Footer() {
             <img className={styles['footer-logo']} src={footerlogo} alt="Kogh Cloud" />
             <p className={styles['desc']} >Empowering businesses through innovative technology and strategic transformation.</p>
             <div className={styles['social-links']}>
-              <a href=""><img src={insta} alt="Kogh's Instagram" /></a>
-              <a href=""><img src={x} alt="Kogh's X/Twitter" /></a>
+              <a href="https://www.instagram.com/kogh.cloud?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer"><img src={insta} alt="Kogh's Instagram" /></a>
+              <a href="https://www.linkedin.com/company/kogh-cloud-technology/about" target="_blank" rel="noopener noreferrer"><img src={x} alt="Kogh's LinkedIn" /></a>
             </div>
           </div>
           <div className={styles['right']}>

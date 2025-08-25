@@ -34,7 +34,7 @@ function Hero() {
 }
 
 function SectionTwo() {
-  
+
   return (
     <div className={styles["sect-two-wrapper"]}>
       <div className={styles["two-left"]}>
@@ -62,7 +62,7 @@ function SectionTwo() {
 
 function SectionThree() {
   const navigate = useNavigate();
-  
+
   const handleGetStarted = () => {
     window.scrollTo({
       top: 0,
@@ -70,7 +70,7 @@ function SectionThree() {
     });
     navigate('/contact');
   };
-  
+
   return (
     <div className={styles["sect-three-wrapper"]}>
       <div className={styles["three-top"]}>
@@ -130,6 +130,18 @@ function SectionFour() {
         <>
           <h2>Our Core Values</h2>
           <div className={styles["four-bottom"]}>
+            <div className={styles["four-top"]}>
+              <img className={styles["four-top-img"]} src={values} alt="" />
+              <h3>Our Values</h3>
+              <p>
+                Our values are the foundation of our culture and the north star that guides our every decision, action, and interaction. <br /><br />
+                1. Integrity: Do the Right Thing, Always <br />
+                2. Honesty: Communicate with Courage and Candor <br />
+                3. Respect: Value Every Voice <br />
+                4. Excellence: Strive for a Higher Standard <br />
+                5. Care: Invest in People
+              </p>
+            </div>
             <div className={styles["four-bottom-left"]}>
               <img src={mission} className={styles["mission-img"]} alt="" />
               <h3>Our Mission</h3>
@@ -150,18 +162,6 @@ function SectionFour() {
               </p>
             </div>
             <div className={styles["hr"]}></div>
-            <div className={styles["four-top"]}>
-              <img className={styles["four-top-img"]} src={values} alt="" />
-              <h3>Our Values</h3>
-              <p>
-                Our values are the foundation of our culture and the north star that guides our every decision, action, and interaction. <br /><br />
-                1. Integrity: Do the Right Thing, Always <br />
-                2. Honesty: Communicate with Courage and Candor <br />
-                3. Respect: Value Every Voice <br />
-                4. Excellence: Strive for a Higher Standard <br />
-                5. Care: Invest in People
-              </p>
-            </div>
           </div>
         </>
       ) : (
@@ -235,7 +235,7 @@ function SectionFive() {
 
 function SectionSix() {
   const navigate = useNavigate();
-  
+
   const handleGetStarted = () => {
     window.scrollTo({
       top: 0,
@@ -243,7 +243,7 @@ function SectionSix() {
     });
     navigate('/contact');
   };
-  
+
   return (
     <div className={styles["sect-six-wrapper"]}>
       <h2>Ready to take your business to another level?</h2>
