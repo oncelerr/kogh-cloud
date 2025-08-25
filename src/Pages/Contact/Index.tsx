@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import emailjs from '@emailjs/browser';
 import vidBg from '../../assets/vid-bg.mp4';
 import styles from './styles.module.scss';
 import arrowRight from '../../assets/arrow-right.png';
@@ -102,6 +103,87 @@ const Hero = () => {
 };
 
 function SectionTwo() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{ success: boolean; message: string } | null>(null);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.message) {
+      setSubmitStatus({
+        success: false,
+        message: 'Please fill in all required fields.'
+      });
+      return;
+    }
+
+    if (!/^\S+@\S+\.\S+$/.test(formData.email)) {
+      setSubmitStatus({
+        success: false,
+        message: 'Please enter a valid email address.'
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const serviceId = import.meta.env.VITE_SERVICE_ID;
+      const templateId = import.meta.env.VITE_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_PUBLIC_KEY;
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+          to_email: 'contact-us@kogh.cloud'
+        },
+        publicKey
+      );
+
+      setSubmitStatus({
+        success: true,
+        message: 'Your message has been sent successfully! We\'ll get back to you soon.'
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setSubmitStatus({
+        success: false,
+        message: 'Failed to send message. Please try again later.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className={styles['sect-two-wrapper']}>
       <h2>We believe every great partnership begins with a <br /> simple, honest conversation.</h2>
@@ -112,18 +194,59 @@ function SectionTwo() {
         <br />Reach out today for a warm chat and a complimentary Digital Health Check to help your business thrive.
       </p>
       <h3>Leave us a message or chat with us!</h3>
-      <div className={styles['sect-two-form']}>
+      <form className={styles['sect-two-form']} onSubmit={handleSubmit}>
         <div className={styles['sect-two-form-left']}>
-          <input className={styles['sect-two-form-left-input']} type="text" placeholder="Your Name" />
-          <input className={styles['sect-two-form-left-input']} type="text" placeholder="Email Address" />
-          <input className={styles['sect-two-form-left-input']} type="text" placeholder="Phone Number (optional)" />
-          <textarea className={styles['sect-two-form-left-textarea']} placeholder="Your Message"></textarea>
-          <div className={styles["btn-wrapper"]}><button>Get Started <img src={arrowRight} alt="" /></button></div>
+          <input
+            className={styles['sect-two-form-left-input']}
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            placeholder="Your Name"
+            required
+          />
+          <input
+            className={styles['sect-two-form-left-input']}
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            placeholder="Email Address"
+            required
+          />
+          <input
+            className={styles['sect-two-form-left-input']}
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            placeholder="Phone Number (optional)"
+          />
+          <textarea
+            className={styles['sect-two-form-left-textarea']}
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            placeholder="Your Message"
+            required
+          ></textarea>
+
+          {submitStatus && (
+            <div className={`${styles.status} ${submitStatus.success ? styles.success : styles.error}`}>
+              {submitStatus.message}
+            </div>
+          )}
+
+          <div className={styles["btn-wrapper"]}>
+            <button type="submit" disabled={isSubmitting}>
+              {isSubmitting ? 'Sending...' : 'Get Started'} <img src={arrowRight} alt="" />
+            </button>
+          </div>
         </div>
         <div className={styles['sect-two-form-right']}>
           <img src={qr2} alt="" />
         </div>
-      </div>
+      </form>
     </div>
   )
 }

@@ -386,12 +386,13 @@
 }
 
 .fth-section {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
     gap: 185px;
     padding: 108px 0;
-    position: relative;
     overflow: hidden;
 
     &::before {
@@ -407,6 +408,10 @@
         opacity: 1;
     }
 }
+
+.fth-section::before {
+  pointer-events: none; /* let clicks pass through */
+}       
 
 .fth-left {
     display: flex;
@@ -432,6 +437,28 @@
     display: flex;
     align-items: center;
 }
+
+.fth-right .fth-btn-wrapper{
+    margin-top: 32px;
+    background: rgba(0, 0, 0, 0.2);
+    padding: .4rem;
+    border-radius: 4.78px;
+}
+
+.fth-right .fth-btn-wrapper .fth-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black !important;
+    width: 220px;
+    height: 65px;
+    border-radius: 4.78px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {

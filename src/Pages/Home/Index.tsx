@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './styles.module.scss';
 import vid from '../../assets/H1.mp4';
 import icon from '../../assets/kogh-icon.png';
@@ -16,6 +17,15 @@ import useIsMobile from '../../hooks/useIsMobile';
 
 function Hero() {
   const isMobile = useIsMobile();
+  const navigate = useNavigate();
+  
+  const handleGetStarted = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    navigate('/services');
+  };
   
   return (
     <div className={styles["hero-wrapper"]}>
@@ -34,18 +44,36 @@ function Hero() {
           alt="" 
         />
         <p>Discover your untapped potential and reach new heights Services and Solutions that Secure, Improve, and Scale your Business.</p>
-        <div className={styles["btn-wrapper"]}><button>Get Started <img src={arrowRight} alt="" /></button></div>
+        <div className={styles["btn-wrapper"]}>
+          <button onClick={handleGetStarted}>
+            Get Started <img src={arrowRight} alt="" />
+          </button>
+        </div>
       </div>
     </div>
   )
 }
 
 function SecondSection() {
+  const navigate = useNavigate();
+  
+  const handleAboutClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    navigate('/about');
+  };
+  
   return (
     <div className={styles['snd-section']}>
       <h2>Empowering your digital transformation <br />through expert cloud solutions.</h2>
       <p> Kogh Cloud is a trusted cloud consulting company with over 15 years of experience in architecture, development, <br /> security, and data management. We provide tailored cloud migration and optimization services designed to meet <br /> your unique business needs—ensuring secure, scalable, and future-ready solutions.</p>
-      <div className={styles["abt-btn-wrapper"]}><button className={styles["abt-btn"]}>About Us <img src={arrowRight} alt="" /></button></div>
+      <div className={styles["abt-btn-wrapper"]}>
+        <button className={styles["abt-btn"]} onClick={handleAboutClick}>
+          About Us <img src={arrowRight} alt="" />
+        </button>
+      </div>
       <img className={styles["img-elmnt"]} src={line} alt="" />
       <img className={styles["img-elmnt2"]} src={g1} alt="" />
       <img className={styles["img-elmnt3"]} src={g2} alt="" />
@@ -173,6 +201,16 @@ function FourthSection() {
 }
 
 function FifthSection() {
+  const navigate = useNavigate();
+  
+  const handleContactClick = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    navigate('/contact');
+  };
+  
   return (
     <div className={styles['fth-section']}>
       <div className={styles['fth-left']}>
@@ -181,7 +219,11 @@ function FifthSection() {
         <p>Let our Family help you with a strategic road map and the right tools <br />to boost efficiency, connect with more customers, and secure your <br />future growth.</p>
       </div>
       <div className={styles['fth-right']}>
-        <div className={styles["abt-btn-wrapper"]}><button className={styles["abt-btn"]}>Get Started <img src={arrowRight} alt="" /></button></div>
+        <div className={styles["fth-btn-wrapper"]}>
+          <button className={styles["fth-btn"]} onClick={handleContactClick}>
+            Get Started <img src={arrowRight} alt="" />
+          </button>
+        </div>
       </div>
     </div>
   )

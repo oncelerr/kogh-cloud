@@ -14,7 +14,8 @@ import mission from '../../assets/mission.png';
 import vision from '../../assets/vision.png';
 import ciao from '../../assets/Caio.png';
 import richard from '../../assets/Richard.png';
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import useIsMobile from '../../hooks/useIsMobile'
 
 function Hero() {
@@ -60,6 +61,16 @@ function SectionTwo() {
 }
 
 function SectionThree() {
+  const navigate = useNavigate();
+  
+  const handleGetStarted = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    navigate('/contact');
+  };
+  
   return (
     <div className={styles["sect-three-wrapper"]}>
       <div className={styles["three-top"]}>
@@ -68,7 +79,11 @@ function SectionThree() {
           <p>We are a cloud consulting company made up of experienced specialists who care about the opportunities cloud technologies can bring to any business. That’s why we have over 15 years of experience in Cloud Architecture, Development, Security, and Data Management.</p>
         </div>
         <div className={styles["top-right"]}>
-          <div className={styles["abt-btn-wrapper"]}><button className={styles["abt-btn"]}>Get Started <img src={arrowRight} alt="" /></button></div>
+          <div className={styles["abt-btn-wrapper"]}>
+            <button className={styles["abt-btn"]} onClick={handleGetStarted}>
+              Get Started <img src={arrowRight} alt="" />
+            </button>
+          </div>
         </div>
       </div>
       <div className={styles["three-bottom"]}>
@@ -154,10 +169,12 @@ function SectionFour() {
             <div className={styles["four-top-right"]}>
               <h3>Our Values</h3>
               <p>
-                Development Before you invest in any technology, you need a plan.
-                We work with you to assess your current state, identify key
-                opportunities, and build a clear, phased roadmap for your
-                digital journey.
+                Our values are the foundation of our culture and the north star that guides our every decision, action, and interaction. <br /><br />
+                1. Integrity: Do the Right Thing, Always <br />
+                2. Honesty: Communicate with Courage and Candor <br />
+                3. Respect: Value Every Voice <br />
+                4. Excellence: Strive for a Higher Standard <br />
+                5. Care: Invest in People
               </p>
             </div>
           </div>
@@ -215,11 +232,25 @@ function SectionFive() {
 }
 
 function SectionSix() {
+  const navigate = useNavigate();
+  
+  const handleGetStarted = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    navigate('/contact');
+  };
+  
   return (
     <div className={styles["sect-six-wrapper"]}>
       <h2>Ready to take your business to another level?</h2>
       <p>Let our Family help you with a strategic road map and the right tools to boost efficiency, connect with more customers, and secure your future growth.</p>
-      <div className={styles["abt-btn-wrapper"]}><button className={styles["abt-btn"]}>Get Started <img src={arrowRight} alt="" /></button></div>
+      <div className={styles["abt-btn-wrapper"]}>
+        <button className={styles["abt-btn"]} onClick={handleGetStarted}>
+          Get Started <img src={arrowRight} alt="" />
+        </button>
+      </div>
     </div>
   )
 }

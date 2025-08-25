@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styles from './styles.module.scss'
 import heroImage2 from '../../assets/hero-image-2.png'
 import g1 from '../../assets/Group137.png'
@@ -20,6 +22,16 @@ import gear from '../../assets/gear.png'
 
 
 function Hero() {
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById('services-section');
+    if (servicesSection) {
+      window.scrollTo({
+        top: servicesSection.offsetTop - 20, // 20px offset from the top
+        behavior: 'smooth'
+      });
+    }
+  };
+
   return (
     <div className={styles["hero-wrapper"]}>
       <img className={styles["hero-dots"]} src={g1} alt="" />
@@ -27,7 +39,11 @@ function Hero() {
         <h1 className={styles["hero-h1"]}>Future-Proof Your <br />Business with <br /> <span className={styles["hero-gradient1"]}>Digital Strategy</span> </h1>
         <h3 className={styles["hero-h1"]}>Don't just compete, lead. </h3>
         <p className={styles["hero-p"]}>We guide your business through a strategic digital transformation, turning technology into your greatest competitive advantage.</p>
-        <div className={styles["btn-wrapper"]}><button>Our Services <img src={arrowRight} alt="" /></button></div>
+        <div className={styles["btn-wrapper"]}>
+          <button onClick={scrollToServices}>
+            Our Services <img src={arrowRight} alt="" />
+          </button>
+        </div>
       </div>
       <div className={styles["hero-right"]}>
         <img src={heroImage2} alt="" />
@@ -76,7 +92,7 @@ function SectionTwo() {
 
 function SectionThree() {
   return (
-    <div className={styles['sect-three-wrapper']}>
+    <div id="services-section" className={styles['sect-three-wrapper']}>
       <h2 className={styles['sect-three-wrapper-h2']}>Our Digital Transformation Services</h2>
       <p className={styles['sect-three-wrapper-p']}>We help you navigate the complexities of technology by providing end-to-end digital transformation solutions tailored to your unique <br /> business goals. We don't just sell software; we build strategic roadmaps for sustainable growth.</p>
       <div className={styles['sect-three-grid-wrapper']}>
@@ -171,11 +187,25 @@ function SectionFour() {
 }
 
 function SectionSix() {
-  return(
+  const navigate = useNavigate();
+  
+  const handleGetStarted = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+    navigate('/contact');
+  };
+  
+  return (
     <div className={styles["sect-six-wrapper"]}>
       <h2>Ready to take your business to another level?</h2>
       <p>Let our Family help you with a strategic road map and the right tools to boost efficiency, connect with more customers, and secure your future growth.</p>
-      <div className={styles["abt-btn-wrapper"]}><button className={styles["abt-btn"]}>Get Started <img src={arrowRight} alt="" /></button></div>
+      <div className={styles["abt-btn-wrapper"]}>
+        <button className={styles["abt-btn"]} onClick={handleGetStarted}>
+          Get Started <img src={arrowRight} alt="" />
+        </button>
+      </div>
     </div>
   )
 }
