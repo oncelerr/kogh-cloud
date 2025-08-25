@@ -239,7 +239,7 @@ function SectionTwo() {
 
           <div className={styles["btn-wrapper"]}>
             <button type="submit" disabled={isSubmitting}>
-              {isSubmitting ? 'Sending...' : 'Get Started'} <img src={arrowRight} alt="" />
+              {isSubmitting ? 'Sending...' : 'Submit'} <img src={arrowRight} alt="" />
             </button>
           </div>
         </div>
