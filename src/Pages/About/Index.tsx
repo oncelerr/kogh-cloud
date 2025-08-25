@@ -154,10 +154,12 @@ function SectionFour() {
               <img className={styles["four-top-img"]} src={values} alt="" />
               <h3>Our Values</h3>
               <p>
-                Development Before you invest in any technology, you need a plan.
-                We work with you to assess your current state, identify key
-                opportunities, and build a clear, phased roadmap for your
-                digital journey.
+                Our values are the foundation of our culture and the north star that guides our every decision, action, and interaction. <br /><br />
+                1. Integrity: Do the Right Thing, Always <br />
+                2. Honesty: Communicate with Courage and Candor <br />
+                3. Respect: Value Every Voice <br />
+                4. Excellence: Strive for a Higher Standard <br />
+                5. Care: Invest in People
               </p>
             </div>
           </div>
