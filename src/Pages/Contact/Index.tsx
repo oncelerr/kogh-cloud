@@ -270,12 +270,6 @@ function SectionThree() {
           <p>+63 917 308 7170 | PH</p>
         </div>
         <div className={styles['address-cont']}>
-          <div className={styles['address-icon']}>
-            <img src={phone} alt="" />
-          </div>
-          <p>+55 11 97764-7271 | BR</p>
-        </div>
-        <div className={styles['address-cont']}>
           <div className={styles['address-icon2']}>
             <img src={envelope} alt="" />
           </div>
