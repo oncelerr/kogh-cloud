@@ -32,7 +32,6 @@ function Footer() {
             <div className={styles['reach']}>
               <p className={styles['title']}>Reach Out to Us</p>
               <div className={styles['reach-items']}><img src={phone} alt="" /><p>+63 917 308 7170 | PH</p></div>
-              <div className={styles['reach-items']}><img src={phone} alt="" /><p>+55 11 97764-7271 | BR</p></div>
               <div className={styles['reach-items']}><img src={location} alt="" /><p>Unit 905, Civic Place Bldg, 2301 Civic Drive, <br /> Filinvest-Alabang, Muntinlupa City, 1780</p></div>
               <div className={styles['reach-items']}><img src={envelope} alt="" /><p>contact-us@kogh.cloud</p></div>
             </div>
